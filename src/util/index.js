@@ -1,5 +1,5 @@
-/** 
- * 获取url的query 
+/**
+ * 获取url的query
  */
 export function getQuery(param) {
   const reg = new RegExp(`(^|&)${param}=([^&]*)(&|$)`);
@@ -7,8 +7,8 @@ export function getQuery(param) {
   return r != null ? decodeURIComponent(r[2]) : null;
 }
 
-/** 
- * 获取cookie 
+/**
+ * 获取cookie
  */
 export function getCookie(name) {
   const reg = new RegExp(`(^| )${name}=([^;]*)(;|$)`);
@@ -16,13 +16,13 @@ export function getCookie(name) {
   return match ? match[2] : null;
 }
 
-/** 
- * 将 Date 转化为指定格式的String 
- * 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
- * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字) 
- * 例子： 
- * formatDate(new Date(), "yyyy-MM-dd hh:mm:ss.S") => 2006-07-02 08:09:04.423 
- * formatDate(new Date(), "yyyy-M-d h:m:s.S") => 2006-7-2 8:9:4.18 
+/**
+ * 将 Date 转化为指定格式的String
+ * 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+ * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+ * 例子：
+ * formatDate(new Date(), "yyyy-MM-dd hh:mm:ss.S") => 2006-07-02 08:09:04.423
+ * formatDate(new Date(), "yyyy-M-d h:m:s.S") => 2006-7-2 8:9:4.18
  */
 export function formatDate(date, format = 'yyyy-MM-dd hh:mm:ss') {
   if (Object.prototype.toString.call(date) !== '[object Date]') {
