@@ -1,5 +1,5 @@
 import { formatDate } from '@/util';
-import './index.css';
+import './index.less';
 import logo from './assets/logo.jpg';
 
 const $app = document.getElementById('app');

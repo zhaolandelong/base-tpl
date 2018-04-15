@@ -12,9 +12,9 @@ module.exports = webpackMerge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         include: path.resolve(root, 'src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader']
       }
     ]
   },
