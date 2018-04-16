@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader'
       },
@@ -40,7 +40,7 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
     alias: {
       '@': path.resolve(root, 'src')
     }

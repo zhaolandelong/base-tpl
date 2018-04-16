@@ -13,7 +13,7 @@ module.exports = webpackMerge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         include: path.resolve(root, 'src'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -22,7 +22,7 @@ module.exports = webpackMerge(baseConfig, {
             options: {
               minimize: true
             }
-          }, 'postcss-loader']
+          }, 'postcss-loader', 'less-loader']
         })
       }
     ]
