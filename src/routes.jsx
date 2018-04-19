@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route } from 'react-router-dom';
 import HelloWorld from '@/components/HelloWorld';
 import Home from '@/components/HelloWorld/Home';
 import Topics from '@/components/HelloWorld/Topics';
@@ -11,12 +11,12 @@ export const routes = [
     routes: [{
       path: '/',
       exact: true,
-      component: Home
-    },{
+      component: Home,
+    }, {
       path: '/topics',
-      component: Topics
-    }]
-  }
+      component: Topics,
+    }],
+  },
 ];
 
 // wrap <Route> and use this everywhere instead, then when

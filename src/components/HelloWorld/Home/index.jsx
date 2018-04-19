@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default props => <div>Home</div>
+export default () => <div>Home</div>;
