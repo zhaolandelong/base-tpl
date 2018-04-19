@@ -9,8 +9,7 @@ export const routes = [
     path: '/',
     component: HelloWorld,
     routes: [{
-      path: '/',
-      exact: true,
+      path: '/home',
       component: Home,
     }, {
       path: '/topics',

@@ -20,6 +20,7 @@ export default class HelloWorld extends Component {
   }
 
   render() {
+    const { routes } = this.props;
     return (
       <div className="hlwd">
         <div className="hlwd-top">
@@ -29,13 +30,13 @@ export default class HelloWorld extends Component {
         </div>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/topics">Topics</Link>
           </li>
         </ul>
-        {this.props.routes.map(route => <RouteWithSubRoutes key={route.path} {...route} />)}
+        {routes.map(route => <RouteWithSubRoutes key={route.path} {...route} />)}
       </div>);
   }
 }

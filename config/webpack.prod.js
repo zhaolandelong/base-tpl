@@ -3,12 +3,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.base');
+
 const root = path.resolve(__dirname, '../');
 
 module.exports = webpackMerge(baseConfig, {
   output: {
     path: path.resolve(root, 'dist'),
-    filename: 'bundle.[chunkhash:10].js'
+    filename: 'bundle.[chunkhash:10].js',
   },
   module: {
     rules: [
@@ -20,27 +21,27 @@ module.exports = webpackMerge(baseConfig, {
           use: [{
             loader: 'css-loader',
             options: {
-              minimize: true
-            }
-          }, 'postcss-loader', 'less-loader']
-        })
-      }
-    ]
+              minimize: true,
+            },
+          }, 'postcss-loader', 'less-loader'],
+        }),
+      },
+    ],
   },
-  devtool: "#source-map",
+  devtool: '#source-map',
   plugins: [
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
-          warnings: false
-        }
+          warnings: false,
+        },
       },
       sourceMap: true,
-      parallel: true
+      parallel: true,
     }),
     new ExtractTextPlugin({
       filename: 'bundle.[contenthash:10].css',
       allChunks: true,
-    })
-  ]
+    }),
+  ],
 });
